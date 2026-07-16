@@ -13,7 +13,10 @@ SRCS =  srcs/utils/helpers/ft_lstadd_back.c \
 		srcs/utils/helpers/ft_strjoin.c \
 		srcs/utils/helpers/ft_strlen.c \
 		srcs/utils/helpers/ft_atoi.c \
+		srcs/utils/helpers/ft_isdigit.c \
+		srcs/utils/helpers/ft_arglen.c \
 		srcs/utils/print_stack.c \
+		srcs/utils/append_node.c \
 		main.c \
 
 OBJS = $(SRCS:.c=.o)
