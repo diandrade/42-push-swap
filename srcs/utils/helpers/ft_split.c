@@ -16,6 +16,7 @@ static int	count_tokens(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 	}
+
 	return (tokens);
 }
 
