@@ -18,11 +18,11 @@ typedef struct s_stack
 /* Methods */
 	/* Helpers*/
 		char	**ft_split(char const *s, char c);
-		char	*ft_strjoin(char const *s1, char const *s2);
 		void	ft_lstadd_back(t_stack **lst, t_stack *new);
 		size_t	ft_strlen(const char *s);
 		t_stack	*ft_lstnew(int content);
 		t_stack *ft_lstlast(t_stack *lst);
+		int	ft_lstfind(t_stack *stack, int value);
 		int	ft_isdigit(int c);
 		int	ft_atoi(const char *nptr);
 		
@@ -30,6 +30,6 @@ typedef struct s_stack
 		void    print_stack(t_stack *head);
 
 	/*	Operations */
-		void    pa(char *content, t_stack **stack_a);
+		void    pa(t_stack **stack_a, int content);
 
 #endif

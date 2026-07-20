@@ -1,33 +1,56 @@
 #include "push_swap.h"
 
-int	check_numbers(char **dst)
+int	is_valid_number(char *str)
 {
 	int	i;
-	int	j;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	check_format(char **dst)
+{
+	int	i;
 
 	if (!dst || !dst[0])
 		return (0);
 	i = 0;
 	while (dst[i] != NULL)
 	{
-		j = 0;
-		if (dst[i][j] == '-' || dst[i][j] == '+')
-			j++;
-		if (!dst[i][j])
+		if (!is_valid_number(dst[i]))
 			return (0);
-		while (dst[i][j])
+		i++;
+	}
+	return (1);
+}
+
+int	check_repeated(t_stack *stack_a, char **dst)
+{
+	int	i;
+
+	i = 0;
+	while (dst[i] != NULL)
+	{
+		if (ft_lstfind(stack_a, ft_atoi(dst[i])))
 		{
-			if (ft_isdigit(dst[i][j]))
-				j++;
-			else
-				return (0);
+			return (0);
 		}
 		i++;
 	}
 	return (1);
 }
 
-char	**parse_args(int argc, char **argv)
+char	**parse_args(int argc, char **argv, t_stack *stack_a)
 {
 	static int	i;
 	char		**dst;
@@ -38,7 +61,7 @@ char	**parse_args(int argc, char **argv)
 	if (i < argc)
 	{
 		dst = ft_split(argv[i++], ' ');
-		if (check_numbers(dst))
+		if (check_format(dst) && check_repeated(stack_a, dst))
 			return (dst);
 		write(2, "Error\n", 6);
 		exit(1);
@@ -56,12 +79,12 @@ int	main(int argc, char **argv)
 	{
 		stack_a = NULL;
 
-		while ((current_args = parse_args(argc, argv)) != NULL)
+		while ((current_args = parse_args(argc, argv, stack_a)) != NULL)
 		{
 			i = 0;
 			while (current_args[i] != NULL)
 			{
-				pa(current_args[i], &stack_a);
+				pa(&stack_a, ft_atoi(current_args[i]));
 				i++;
 			}
 		}
