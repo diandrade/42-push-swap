@@ -50,6 +50,7 @@ int	main(int argc, char **argv)
 {
 	t_stack *stack_a;
 	char **current_args;
+	int i;
 
 	if (argc > 1)
 	{
@@ -57,7 +58,12 @@ int	main(int argc, char **argv)
 
 		while ((current_args = parse_args(argc, argv)) != NULL)
 		{
-			append_node(current_args, &stack_a);
+			i = 0;
+			while (current_args[i] != NULL)
+			{
+				pa(current_args[i], &stack_a);
+				i++;
+			}
 		}
 
 		print_stack(stack_a);
