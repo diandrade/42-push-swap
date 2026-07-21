@@ -87,12 +87,12 @@ int	main(int argc, char **argv)
 			i = 0;
 			while (current_args[i] != NULL)
 			{
-				append_node(&stack_a, ft_atol(current_args[i]));
+				stack_append(&stack_a, ft_atol(current_args[i]));
 				i++;
 			}
 		}
 
-		print_stack(stack_a);
+		stack_print(stack_a);
 		return (0);
 	}
 	return (1);

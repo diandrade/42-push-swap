@@ -6,21 +6,26 @@ RM = rm -rf
 
 NAME = push_swap
 
-SRCS =  srcs/utils/helpers/ft_lstadd_back.c \
-		srcs/utils/helpers/ft_lstfind.c \
-		srcs/utils/helpers/ft_lstlast.c \
-		srcs/utils/helpers/ft_lstnew.c \
-		srcs/utils/helpers/ft_split.c \
-		srcs/utils/helpers/ft_strlen.c \
-		srcs/utils/helpers/ft_atol.c \
-		srcs/utils/helpers/ft_isdigit.c \
-		srcs/utils/operations/push.c \
-		srcs/utils/operations/reverse_rotate.c \
-		srcs/utils/operations/rotate.c \
-		srcs/utils/operations/swap.c \
-		srcs/utils/append_node.c \
-		srcs/utils/print_stack.c \
-		main.c \
+SRCS =  main.c \
+        srcs/sort/sort_small.c \
+        srcs/operations/push.c \
+        srcs/operations/reverse_rotate.c \
+        srcs/operations/rotate.c \
+        srcs/operations/swap.c \
+        srcs/utils/stack_utils/stack_append.c \
+        srcs/utils/stack_utils/stack_is_sorted.c \
+        srcs/utils/stack_utils/stack_print.c \
+        srcs/utils/stack_utils/stack_size.c \
+        srcs/utils/libft_utils/ft_atol.c \
+        srcs/utils/libft_utils/ft_isdigit.c \
+        srcs/utils/libft_utils/ft_lstadd_back.c \
+        srcs/utils/libft_utils/ft_lstfind.c \
+        srcs/utils/libft_utils/ft_lstlast.c \
+        srcs/utils/libft_utils/ft_lstnew.c \
+        srcs/utils/libft_utils/ft_putnbr_long.c \
+        srcs/utils/libft_utils/ft_putstr.c \
+        srcs/utils/libft_utils/ft_split.c \
+        srcs/utils/libft_utils/ft_strlen.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -2,45 +2,51 @@
 # define PUSH_SWAP_H
 
 /* Libraries */
-#include <unistd.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdio.h>
+# include <limits.h>
+# include <stddef.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 /* Structs */
 typedef struct s_stack
 {
 	long			content;
 	struct s_stack	*next;
-}	t_stack;
+}					t_stack;
 
-/* Methods */
-	/* Helpers*/
-		char	**ft_split(char const *s, char c);
-		void	ft_lstadd_back(t_stack **lst, t_stack *new);
-		long	ft_atol(const char *str);
-		int	ft_lstfind(t_stack *stack, long value);
-		int	ft_isdigit(int c);
-		size_t	ft_strlen(const char *s);
-		t_stack	*ft_lstnew(long content);
-		t_stack *ft_lstlast(t_stack *lst);
-		
-	/* Utils */
-		void    print_stack(t_stack *head);
-		void    append_node(t_stack **stack_a, long content);
+/* Libft Utils */
+char				**ft_split(char const *s, char c);
+void				ft_lstadd_back(t_stack **lst, t_stack *new);
+long				ft_atol(const char *str);
+int					ft_lstfind(t_stack *stack, long value);
+int					ft_isdigit(int c);
+size_t				ft_strlen(const char *s);
+t_stack				*ft_lstnew(long content);
+t_stack				*ft_lstlast(t_stack *lst);
+void				ft_putstr(char *str);
+void				ft_putnbr_long(long n);
 
-	/* Operations */
-		void	pa(t_stack **a, t_stack **b);
-		void	pb(t_stack **a, t_stack **b);
-		void	sa(t_stack **a, int print);
-		void	sb(t_stack **b, int print);
-		void	ss(t_stack **a, t_stack **b, int print);
-		void	ra(t_stack **a, int print);
-		void	rb(t_stack **b, int print);
-		void	rr(t_stack **a, t_stack **b, int print);
-		void	rra(t_stack **a, int print);
-		void	rrb(t_stack **b, int print);
-		void	rrr(t_stack **a, t_stack **b, int print);
+/* Stack Utils */
+int					stack_is_sorted(t_stack *stack);
+void				stack_print(t_stack *head);
+void				stack_append(t_stack **stack_a, long content);
+int					stack_size(t_stack *stack);
+
+/* Sort */
+void				sort_small(t_stack **a, t_stack **b);
+
+/* Operations */
+void				pa(t_stack **a, t_stack **b);
+void				pb(t_stack **a, t_stack **b);
+void				sa(t_stack **a, int print);
+void				sb(t_stack **b, int print);
+void				ss(t_stack **a, t_stack **b, int print);
+void				ra(t_stack **a, int print);
+void				rb(t_stack **b, int print);
+void				rr(t_stack **a, t_stack **b, int print);
+void				rra(t_stack **a, int print);
+void				rrb(t_stack **b, int print);
+void				rrr(t_stack **a, t_stack **b, int print);
 
 #endif
