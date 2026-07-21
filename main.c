@@ -36,15 +36,15 @@ int	check_format(char **dst)
 
 int	check_duplicates_and_limits(t_stack *stack_a, char **dst)
 {
-	int	i;
-	long char_to_int;
+	int		i;
+	long	char_to_int;
 
 	i = 0;
 	while (dst[i] != NULL)
 	{
 		char_to_int = ft_atol(dst[i]);
-
-		if (ft_lstfind(stack_a, char_to_int) || char_to_int > INT_MAX || char_to_int < INT_MIN)
+		if (ft_lstfind(stack_a, char_to_int) || char_to_int > INT_MAX
+			|| char_to_int < INT_MIN)
 		{
 			return (0);
 		}
@@ -92,8 +92,11 @@ int	main(int argc, char **argv)
 			}
 		}
 
-		stack_print(stack_a);
-		return (0);
+		if (!stack_is_sorted(stack_a))
+		{
+			stack_print(stack_a);
+			return (0);
+		}
 	}
 	return (1);
 }
