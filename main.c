@@ -34,14 +34,17 @@ int	check_format(char **dst)
 	return (1);
 }
 
-int	check_repeated(t_stack *stack_a, char **dst)
+int	check_duplicates_and_limits(t_stack *stack_a, char **dst)
 {
 	int	i;
+	long char_to_int;
 
 	i = 0;
 	while (dst[i] != NULL)
 	{
-		if (ft_lstfind(stack_a, ft_atoi(dst[i])))
+		char_to_int = ft_atol(dst[i]);
+
+		if (ft_lstfind(stack_a, char_to_int) || char_to_int > INT_MAX || char_to_int < INT_MIN)
 		{
 			return (0);
 		}
@@ -61,7 +64,7 @@ char	**parse_args(int argc, char **argv, t_stack *stack_a)
 	if (i < argc)
 	{
 		dst = ft_split(argv[i++], ' ');
-		if (check_format(dst) && check_repeated(stack_a, dst))
+		if (check_format(dst) && check_duplicates_and_limits(stack_a, dst))
 			return (dst);
 		write(2, "Error\n", 6);
 		exit(1);
@@ -84,7 +87,7 @@ int	main(int argc, char **argv)
 			i = 0;
 			while (current_args[i] != NULL)
 			{
-				pa(&stack_a, ft_atoi(current_args[i]));
+				pa(&stack_a, ft_atol(current_args[i]));
 				i++;
 			}
 		}

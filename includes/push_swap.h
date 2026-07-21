@@ -11,7 +11,7 @@
 /* Structs */
 typedef struct s_stack
 {
-	int			content;
+	long			content;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -20,16 +20,17 @@ typedef struct s_stack
 		char	**ft_split(char const *s, char c);
 		void	ft_lstadd_back(t_stack **lst, t_stack *new);
 		size_t	ft_strlen(const char *s);
-		t_stack	*ft_lstnew(int content);
+		long	ft_atol(const char *str);
+		t_stack	*ft_lstnew(long content);
 		t_stack *ft_lstlast(t_stack *lst);
-		int	ft_lstfind(t_stack *stack, int value);
+		int	ft_lstfind(t_stack *stack, long value);
 		int	ft_isdigit(int c);
-		int	ft_atoi(const char *nptr);
+		
 		
 	/* Utils */
 		void    print_stack(t_stack *head);
 
 	/*	Operations */
-		void    pa(t_stack **stack_a, int content);
+		void    pa(t_stack **stack_a, long content);
 
 #endif

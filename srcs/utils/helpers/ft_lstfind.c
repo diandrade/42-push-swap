@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int	ft_lstfind(t_stack *stack, int value)
+int	ft_lstfind(t_stack *stack, long value)
 {
 	while (stack != NULL)
 	{

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-t_stack	*ft_lstnew(int content)
+t_stack	*ft_lstnew(long content)
 {
 	t_stack	*dst;
 

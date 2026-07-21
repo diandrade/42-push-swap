@@ -12,7 +12,7 @@ SRCS =  srcs/utils/helpers/ft_lstadd_back.c \
 		srcs/utils/helpers/ft_lstnew.c \
 		srcs/utils/helpers/ft_split.c \
 		srcs/utils/helpers/ft_strlen.c \
-		srcs/utils/helpers/ft_atoi.c \
+		srcs/utils/helpers/ft_atol.c \
 		srcs/utils/helpers/ft_isdigit.c \
 		srcs/utils/operations/pa.c \
 		srcs/utils/print_stack.c \
