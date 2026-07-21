@@ -14,7 +14,7 @@ SRCS =  srcs/utils/helpers/ft_lstadd_back.c \
 		srcs/utils/helpers/ft_strlen.c \
 		srcs/utils/helpers/ft_atol.c \
 		srcs/utils/helpers/ft_isdigit.c \
-		srcs/utils/operations/pa.c \
+		srcs/utils/append_node.c \
 		srcs/utils/print_stack.c \
 		main.c \
 

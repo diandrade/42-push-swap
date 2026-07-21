@@ -87,7 +87,7 @@ int	main(int argc, char **argv)
 			i = 0;
 			while (current_args[i] != NULL)
 			{
-				pa(&stack_a, ft_atol(current_args[i]));
+				append_node(&stack_a, ft_atol(current_args[i]));
 				i++;
 			}
 		}

@@ -29,8 +29,6 @@ typedef struct s_stack
 		
 	/* Utils */
 		void    print_stack(t_stack *head);
-
-	/*	Operations */
-		void    pa(t_stack **stack_a, long content);
+		void    append_node(t_stack **stack_a, long content);
 
 #endif
