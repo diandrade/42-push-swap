@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
 
 	stack_init(argc, argv, &stack_a);
 	stack_assign_index(stack_a);
-	
+
 	disorder = stack_disorder(stack_a);
 
 	stack_print(stack_a);
