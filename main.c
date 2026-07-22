@@ -4,8 +4,7 @@ int	main(int argc, char **argv)
 {
 	t_stack *stack_a;
 	t_stack *stack_b;
-	char **current_args;
-	int i;
+	int disorder;
 
 	if (argc < 2)
 		return (0);
@@ -13,16 +12,11 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 
-	while ((current_args = parser_parse_args(argc, argv, stack_a)) != NULL)
-	{
-		i = 0;
-		while (current_args[i] != NULL)
-		{
-			stack_append(&stack_a, ft_atol(current_args[i]));
-			i++;
-		}
-		parser_free(current_args);
-	}
+	stack_init(argc, argv, stack_a);
+	stack_assign_index(stack_a);
+	
+	disorder = stack_disorder(stack_a);
+	printf("%d\n", disorder);
 
 	if (!stack_is_sorted(stack_a))
 	{

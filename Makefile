@@ -22,6 +22,8 @@ SRCS =  main.c \
         srcs/utils/stack_utils/stack_is_sorted.c \
         srcs/utils/stack_utils/stack_print.c \
         srcs/utils/stack_utils/stack_size.c \
+        srcs/utils/stack_utils/stack_disorder.c \
+        srcs/utils/stack_utils/stack_init.c \
         srcs/utils/libft_utils/ft_atol.c \
         srcs/utils/libft_utils/ft_isdigit.c \
         srcs/utils/libft_utils/ft_isnumber.c \
