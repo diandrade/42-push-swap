@@ -12,11 +12,12 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 
-	stack_init(argc, argv, stack_a);
+	stack_init(argc, argv, &stack_a);
 	stack_assign_index(stack_a);
 	
 	disorder = stack_disorder(stack_a);
-	printf("%d\n", disorder);
+
+	stack_print(stack_a);
 
 	if (!stack_is_sorted(stack_a))
 	{
@@ -25,6 +26,8 @@ int	main(int argc, char **argv)
 		else
 			sort_chunks(&stack_a, &stack_b);
 	}
+
+	stack_print(stack_a);
 
 	stack_free(&stack_a);
 	stack_free(&stack_b);

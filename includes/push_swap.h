@@ -44,7 +44,7 @@ int					stack_size(t_stack *stack);
 void				stack_assign_index(t_stack *stack_a);
 void				stack_free(t_stack **stack);
 int					stack_disorder(t_stack *stack_a);
-void				stack_init(int argc, char **argv, t_stack *stack_a);
+void				stack_init(int argc, char **argv, t_stack **stack_a);
 
 /* Sort Strategies */
 void				sort_small(t_stack **a, t_stack **b);
