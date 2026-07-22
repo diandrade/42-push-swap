@@ -8,16 +8,23 @@ NAME = push_swap
 
 SRCS =  main.c \
         srcs/sort/sort_small.c \
+        srcs/sort/sort_chunks.c \
         srcs/operations/push.c \
         srcs/operations/reverse_rotate.c \
         srcs/operations/rotate.c \
         srcs/operations/swap.c \
+        srcs/utils/parser_utils/parser_check.c \
+        srcs/utils/parser_utils/parser_parse_args.c \
+        srcs/utils/parser_utils/parser_free.c \
         srcs/utils/stack_utils/stack_append.c \
+        srcs/utils/stack_utils/stack_assign_index.c \
+        srcs/utils/stack_utils/stack_free.c \
         srcs/utils/stack_utils/stack_is_sorted.c \
         srcs/utils/stack_utils/stack_print.c \
         srcs/utils/stack_utils/stack_size.c \
         srcs/utils/libft_utils/ft_atol.c \
         srcs/utils/libft_utils/ft_isdigit.c \
+        srcs/utils/libft_utils/ft_isnumber.c \
         srcs/utils/libft_utils/ft_lstadd_back.c \
         srcs/utils/libft_utils/ft_lstfind.c \
         srcs/utils/libft_utils/ft_lstlast.c \

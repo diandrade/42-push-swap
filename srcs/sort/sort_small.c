@@ -1,5 +1,29 @@
 #include "push_swap.h"
 
+static int	find_min_index(t_stack *a)
+{
+	int		min_val;
+	int		min_idx;
+	int		i;
+	t_stack	*curr;
+
+	min_val = a->content;
+	min_idx = 0;
+	i = 0;
+	curr = a;
+	while (curr)
+	{
+		if (curr->content < min_val)
+		{
+			min_val = curr->content;
+			min_idx = i;
+		}
+		curr = curr->next;
+		i++;
+	}
+	return (min_idx);
+}
+
 static void	sort_three(t_stack **a)
 {
 	int	v0;
@@ -29,11 +53,32 @@ static void	sort_three(t_stack **a)
 	}
 }
 
+static void	sort_four_or_five(t_stack **a, t_stack **b)
+{
+	int	min_idx;
+	int	size;
+
+	while (stack_size(*a) > 3)
+	{
+		min_idx = find_min_index(*a);
+		size = stack_size(*a);
+		if (min_idx <= size / 2)
+			while (min_idx-- > 0)
+				ra(a, 1);
+		else
+			while (min_idx++ < size)
+				rra(a, 1);
+		pb(a, b);
+	}
+	sort_three(a);
+	while (*b)
+		pa(a, b);
+}
+
 void	sort_small(t_stack **a, t_stack **b)
 {
 	int	size;
 
-	(void)b;
 	size = stack_size(*a);
 	if (size <= 1)
 		return ;
@@ -45,4 +90,6 @@ void	sort_small(t_stack **a, t_stack **b)
 	}
 	if (size == 3)
 		sort_three(a);
+	else if (size <= 5)
+		sort_four_or_five(a, b);
 }
