@@ -8,7 +8,9 @@ NAME = push_swap
 
 SRCS =  main.c \
         srcs/sort/sort_small.c \
-        srcs/sort/sort_chunks.c \
+        srcs/sort/sort_chunk.c \
+        srcs/sort/sort_radix.c \
+        srcs/sort/sort_adaptative.c \
         srcs/operations/push.c \
         srcs/operations/reverse_rotate.c \
         srcs/operations/rotate.c \

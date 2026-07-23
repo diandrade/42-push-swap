@@ -48,7 +48,9 @@ void				stack_init(int argc, char **argv, t_stack **stack_a);
 
 /* Sort Strategies */
 void				sort_small(t_stack **a, t_stack **b);
-void				sort_chunks(t_stack **a, t_stack **b);
+void				sort_chunk(t_stack **a, t_stack **b);
+void				sort_radix(t_stack **a, t_stack **b);
+void    			sort_adaptative(int disorder, t_stack **stack_a, t_stack **stack_b);
 
 /* Operations */
 void				pa(t_stack **a, t_stack **b);

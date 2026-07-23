@@ -17,17 +17,10 @@ int	main(int argc, char **argv)
 	
 	disorder = stack_disorder(stack_a);
 
-	stack_print(stack_a);
-
 	if (!stack_is_sorted(stack_a))
 	{
-		if (stack_size(stack_a) <= 5)
-			sort_small(&stack_a, &stack_b);
-		else
-			sort_chunks(&stack_a, &stack_b);
+		sort_adaptative(disorder, &stack_a, &stack_b);
 	}
-
-	stack_print(stack_a);
 
 	stack_free(&stack_a);
 	stack_free(&stack_b);

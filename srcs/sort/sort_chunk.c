@@ -77,7 +77,7 @@ static void	rotate_to_top(t_stack **b, int pos)
 	}
 }
 
-void	sort_chunks(t_stack **a, t_stack **b)
+void	sort_chunk(t_stack **a, t_stack **b)
 {
 	int size;
 	int chunk_size;
