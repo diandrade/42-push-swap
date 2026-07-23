@@ -11,6 +11,7 @@ SRCS =  main.c \
         srcs/sort/sort_chunk.c \
         srcs/sort/sort_radix.c \
         srcs/sort/sort_adaptative.c \
+        srcs/sort/sort_strategy.c \
         srcs/operations/push.c \
         srcs/operations/reverse_rotate.c \
         srcs/operations/rotate.c \
@@ -36,6 +37,7 @@ SRCS =  main.c \
         srcs/utils/libft_utils/ft_putnbr_long.c \
         srcs/utils/libft_utils/ft_putstr.c \
         srcs/utils/libft_utils/ft_split.c \
+        srcs/utils/libft_utils/ft_strncmp.c \
         srcs/utils/libft_utils/ft_strlen.c
 
 OBJS = $(SRCS:.c=.o)

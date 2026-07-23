@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-char	**parser_parse_args(int argc, char **argv, t_stack *stack_a)
+char	**parser_parse_args(int argc, char **argv, t_stack *stack_a, t_flags *opt)
 {
 	static int	i;
 	char		**dst;
@@ -11,7 +11,7 @@ char	**parser_parse_args(int argc, char **argv, t_stack *stack_a)
 	if (i < argc)
 	{
 		dst = ft_split(argv[i++], ' ');
-		if (parser_check_format(dst) && parser_check_dup_and_limits(stack_a, dst))
+		if (parser_check_fmt_and_flags(dst, opt) && parser_check_dup_and_limits(stack_a, dst))
 			return (dst);
 		write(2, "Error\n", 6);
 		exit(1);

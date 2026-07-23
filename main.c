@@ -4,6 +4,7 @@ int	main(int argc, char **argv)
 {
 	t_stack *stack_a;
 	t_stack *stack_b;
+	t_flags opt;
 	int disorder;
 
 	if (argc < 2)
@@ -12,14 +13,16 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 
-	stack_init(argc, argv, &stack_a);
+	opt.is_bench = 0;
+	opt.sort_mode = "adaptive";
+
+	stack_init(argc, argv, &stack_a, &opt);
 	stack_assign_index(stack_a);
-	
 	disorder = stack_disorder(stack_a);
 
 	if (!stack_is_sorted(stack_a))
 	{
-		sort_adaptative(disorder, &stack_a, &stack_b);
+		sort_strategy(disorder, &stack_a, &stack_b, opt);
 	}
 
 	stack_free(&stack_a);

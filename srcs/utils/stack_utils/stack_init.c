@@ -1,12 +1,12 @@
 #include "push_swap.h"
 
 
-void	stack_init(int argc, char **argv, t_stack **stack_a)
+void	stack_init(int argc, char **argv, t_stack **stack_a, t_flags *opt)
 {
     char **current_args;
     int i;
 
-    while ((current_args = parser_parse_args(argc, argv, *stack_a)) != NULL)
+    while ((current_args = parser_parse_args(argc, argv, *stack_a, opt)) != NULL)
 	{
 		i = 0;
 		while (current_args[i] != NULL)

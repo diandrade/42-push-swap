@@ -1,0 +1,14 @@
+#include "push_swap.h"
+
+void	sort_strategy(int disorder, t_stack **stack_a, t_stack **stack_b,
+		t_flags opt)
+{
+	if (ft_strncmp(opt.sort_mode, "adaptative", 11) == 0)
+		sort_adaptative(disorder, stack_a, stack_b);
+	else if (ft_strncmp(opt.sort_mode, "simple", 7) == 0)
+		sort_small(stack_a, stack_b);
+	else if (ft_strncmp(opt.sort_mode, "medium", 7) == 0)
+		sort_chunk(stack_a, stack_b);
+	else
+		sort_radix(stack_a, stack_b);
+}
