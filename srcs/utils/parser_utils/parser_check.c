@@ -11,15 +11,15 @@ int parser_check_fmt_and_flags(char **dst, t_flags *opt)
     {
         if (ft_strncmp(dst[i], "--bench", 8) == 0)
             opt->is_bench = 1;
-        if (ft_strncmp(dst[i], "--simple", 9) == 0)
+        else if (ft_strncmp(dst[i], "--simple", 9) == 0)
             opt->sort_mode = "simple";
-        if (ft_strncmp(dst[i], "--medium", 9) == 0)
+        else if (ft_strncmp(dst[i], "--medium", 9) == 0)
             opt->sort_mode = "medium";
-        if (ft_strncmp(dst[i], "--complex", 10) == 0)
+        else if (ft_strncmp(dst[i], "--complex", 10) == 0)
             opt->sort_mode = "complex";
-        if (ft_strncmp(dst[i], "--adaptative", 13) == 0)
+        else if (ft_strncmp(dst[i], "--adaptative", 13) == 0)
             opt->sort_mode = "adaptative";
-        if (!ft_isnumber(dst[i]))
+        else if (!ft_isnumber(dst[i]))
             return (0);
         i++;
     }

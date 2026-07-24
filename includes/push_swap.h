@@ -61,7 +61,7 @@ void				sort_radix(t_stack **a, t_stack **b);
 void				sort_adaptative(int disorder, t_stack **stack_a,
 						t_stack **stack_b);
 void				sort_strategy(int disorder, t_stack **stack_a,
-						t_stack **stack_b, t_flags opt);
+						t_stack **stack_b, t_flags *opt);
 
 /* Operations */
 void				pa(t_stack **a, t_stack **b);

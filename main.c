@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 
 	opt.is_bench = 0;
-	opt.sort_mode = "adaptive";
+	opt.sort_mode = "adaptative";
 
 	stack_init(argc, argv, &stack_a, &opt);
 	stack_assign_index(stack_a);
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 
 	if (!stack_is_sorted(stack_a))
 	{
-		sort_strategy(disorder, &stack_a, &stack_b, opt);
+		sort_strategy(disorder, &stack_a, &stack_b, &opt);
 	}
 
 	stack_free(&stack_a);

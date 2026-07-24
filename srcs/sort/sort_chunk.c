@@ -81,7 +81,7 @@ void	sort_chunk(t_stack **a, t_stack **b)
 {
 	int size;
 	int chunk_size;
-
+	
 	size = stack_size(*a);
 	if (size <= 3)
 	{

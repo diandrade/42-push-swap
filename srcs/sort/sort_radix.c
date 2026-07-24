@@ -37,7 +37,7 @@ void	sort_radix(t_stack **a, t_stack **b)
 	int	size;
 	int	bits;
 	int	bit;
-
+	
 	size = stack_size(*a);
 	if (size <= 1 || stack_is_sorted(*a))
 		return ;
