@@ -68,25 +68,26 @@ void				stack_init(int argc, char **argv, t_stack **stack_a,
 						t_strategy *opt);
 
 /* Sort Strategies */
-void				sort_small(t_stack **a, t_stack **b);
-void				sort_chunk(t_stack **a, t_stack **b);
-void				sort_radix(t_stack **a, t_stack **b);
+void				sort_init(t_strategy *opt);
+void				sort_small(t_stack **a, t_stack **b, t_strategy *opt);
+void				sort_chunk(t_stack **a, t_stack **b, t_strategy *opt);
+void				sort_radix(t_stack **a, t_stack **b, t_strategy *opt);
 void				sort_adaptative(int disorder, t_stack **stack_a,
-						t_stack **stack_b);
+						t_stack **stack_b, t_strategy *opt);
 void				sort_strategy(int disorder, t_stack **stack_a,
 						t_stack **stack_b, t_strategy *opt);
 
 /* Operations */
-void				pa(t_stack **a, t_stack **b);
-void				pb(t_stack **a, t_stack **b);
-void				sa(t_stack **a, int print);
-void				sb(t_stack **b, int print);
-void				ss(t_stack **a, t_stack **b, int print);
-void				ra(t_stack **a, int print);
-void				rb(t_stack **b, int print);
-void				rr(t_stack **a, t_stack **b, int print);
-void				rra(t_stack **a, int print);
-void				rrb(t_stack **b, int print);
-void				rrr(t_stack **a, t_stack **b, int print);
+void				pa(t_stack **a, t_stack **b, t_strategy *opt);
+void				pb(t_stack **a, t_stack **b, t_strategy *opt);
+void				sa(t_stack **a, int print, t_strategy *opt);
+void				sb(t_stack **b, int print, t_strategy *opt);
+void				ss(t_stack **a, t_stack **b, int print, t_strategy *opt);
+void				ra(t_stack **a, int print, t_strategy *opt);
+void				rb(t_stack **b, int print, t_strategy *opt);
+void				rr(t_stack **a, t_stack **b, int print, t_strategy *opt);
+void				rra(t_stack **a, int print, t_strategy *opt);
+void				rrb(t_stack **b, int print, t_strategy *opt);
+void				rrr(t_stack **a, t_stack **b, int print, t_strategy *opt);
 
 #endif

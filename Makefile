@@ -7,6 +7,7 @@ RM = rm -rf
 NAME = push_swap
 
 SRCS =  main.c \
+        srcs/sort/sort_init.c \
         srcs/sort/sort_small.c \
         srcs/sort/sort_chunk.c \
         srcs/sort/sort_radix.c \

@@ -24,7 +24,7 @@ static int  find_min_index(t_stack *a)
     return (min_idx);
 }
 
-static void sort_three(t_stack **a)
+static void sort_three(t_stack **a, t_strategy *opt)
 {
     int v0;
     int v1;
@@ -37,23 +37,23 @@ static void sort_three(t_stack **a)
         return ;
     else if (v0 < v2 && v2 < v1)
     {
-        rra(a, 1);
-        sa(a, 1);
+        rra(a, 1, opt);
+        sa(a, 1, opt);
     }
     else if (v1 < v0 && v0 < v2)
-        sa(a, 1);
+        sa(a, 1, opt);
     else if (v2 < v0 && v0 < v1)
-        rra(a, 1);
+        rra(a, 1, opt);
     else if (v1 < v2 && v2 < v0)
-        ra(a, 1);
+        ra(a, 1, opt);
     else
     {
-        sa(a, 1);
-        rra(a, 1);
+        sa(a, 1, opt);
+        rra(a, 1, opt);
     }
 }
 
-static void sort_generic_small(t_stack **a, t_stack **b)
+static void sort_generic_small(t_stack **a, t_stack **b, t_strategy *opt)
 {
     int min_idx;
     int size;
@@ -65,21 +65,21 @@ static void sort_generic_small(t_stack **a, t_stack **b)
         if (min_idx <= size / 2)
         {
             while (min_idx-- > 0)
-                ra(a, 1);
+                ra(a, 1, opt);
         }
         else
         {
             while (min_idx++ < size)
-                rra(a, 1);
+                rra(a, 1, opt);
         }
-        pb(a, b);
+        pb(a, b, opt);
     }
-    sort_three(a);
+    sort_three(a, opt);
     while (*b)
-        pa(a, b);
+        pa(a, b, opt);
 }
 
-void    sort_small(t_stack **a, t_stack **b)
+void    sort_small(t_stack **a, t_stack **b, t_strategy *opt)
 {
     int size;
 
@@ -89,11 +89,11 @@ void    sort_small(t_stack **a, t_stack **b)
     if (size == 2)
     {
         if ((*a)->content > (*a)->next->content)
-            sa(a, 1);
+            sa(a, 1, opt);
         return ;
     }
     if (size == 3)
-        sort_three(a);
+        sort_three(a, opt);
     else
-        sort_generic_small(a, b);
+        sort_generic_small(a, b, opt);
 }

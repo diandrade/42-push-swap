@@ -9,7 +9,8 @@ static int	get_chunk_size(int size)
 	return (32);
 }
 
-static void	push_chunks(t_stack **a, t_stack **b, int chunk_size)
+static void	push_chunks(t_stack **a, t_stack **b, int chunk_size,
+		t_strategy *opt)
 {
 	int	start;
 	int	end;
@@ -20,14 +21,14 @@ static void	push_chunks(t_stack **a, t_stack **b, int chunk_size)
 	{
 		if ((*a)->index < end)
 		{
-			pb(a, b);
+			pb(a, b, opt);
 			if ((*b)->index < start + (chunk_size / 2))
-				rb(b, 1);
+				rb(b, 1, opt);
 			start++;
 			end++;
 		}
 		else
-			ra(a, 1);
+			ra(a, 1, opt);
 	}
 }
 
@@ -57,7 +58,7 @@ static int	find_max_position(t_stack *b)
 	return (pos);
 }
 
-static void	rotate_to_top(t_stack **b, int pos)
+static void	rotate_to_top(t_stack **b, int pos, t_strategy *opt)
 {
 	int	size;
 	int	rotations;
@@ -67,35 +68,33 @@ static void	rotate_to_top(t_stack **b, int pos)
 	{
 		rotations = pos;
 		while (rotations-- > 0)
-			rb(b, 1);
+			rb(b, 1, opt);
 	}
 	else
 	{
 		rotations = size - pos;
 		while (rotations-- > 0)
-			rrb(b, 1);
+			rrb(b, 1, opt);
 	}
 }
 
-void	sort_chunk(t_stack **a, t_stack **b)
+void	sort_chunk(t_stack **a, t_stack **b, t_strategy *opt)
 {
 	int size;
 	int chunk_size;
-	
+
 	size = stack_size(*a);
 	if (size <= 3)
 	{
-		sort_small(a, b);
+		sort_small(a, b, opt);
 		return ;
 	}
-
 	stack_assign_index(*a);
 	chunk_size = get_chunk_size(size);
-	push_chunks(a, b, chunk_size);
-
+	push_chunks(a, b, chunk_size, opt);
 	while (*b != NULL)
 	{
-		rotate_to_top(b, find_max_position(*b));
-		pa(a, b);
+		rotate_to_top(b, find_max_position(*b), opt);
+		pa(a, b, opt);
 	}
 }
