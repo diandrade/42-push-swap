@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
 
-void	stack_init(int argc, char **argv, t_stack **stack_a, t_flags *opt)
+void	stack_init(int argc, char **argv, t_stack **stack_a, t_strategy *opt)
 {
     char **current_args;
     int i;

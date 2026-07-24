@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int parser_check_fmt_and_flags(char **dst, t_flags *opt)
+int parser_check_fmt_and_flags(char **dst, t_strategy *opt)
 {
     int i;
 

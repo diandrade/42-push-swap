@@ -16,11 +16,24 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-typedef struct s_flags
+typedef struct s_strategy
 {
 	int				is_bench;
 	char			*sort_mode;
-}					t_flags;
+	int				disorder_pct;
+	int				sa;
+	int				sb;
+	int				ss;
+	int				pa;
+	int				pb;
+	int				ra;
+	int				rb;
+	int				rr;
+	int				rra;
+	int				rrb;
+	int				rrr;
+	int				total_ops;
+}					t_strategy;
 
 /* Libft Utils */
 char				**ft_split(char const *s, char c);
@@ -38,8 +51,8 @@ void				ft_putnbr_long(long n);
 
 /* Parser Utils */
 char				**parser_parse_args(int argc, char **argv, t_stack *stack_a,
-						t_flags *opt);
-int					parser_check_fmt_and_flags(char **dst, t_flags *opt);
+						t_strategy *opt);
+int					parser_check_fmt_and_flags(char **dst, t_strategy *opt);
 int					parser_check_dup_and_limits(t_stack *stack_a, char **dst);
 void				parser_free(char **arr);
 
@@ -52,7 +65,7 @@ void				stack_assign_index(t_stack *stack_a);
 void				stack_free(t_stack **stack);
 int					stack_disorder(t_stack *stack_a);
 void				stack_init(int argc, char **argv, t_stack **stack_a,
-						t_flags *opt);
+						t_strategy *opt);
 
 /* Sort Strategies */
 void				sort_small(t_stack **a, t_stack **b);
@@ -61,7 +74,7 @@ void				sort_radix(t_stack **a, t_stack **b);
 void				sort_adaptative(int disorder, t_stack **stack_a,
 						t_stack **stack_b);
 void				sort_strategy(int disorder, t_stack **stack_a,
-						t_stack **stack_b, t_flags *opt);
+						t_stack **stack_b, t_strategy *opt);
 
 /* Operations */
 void				pa(t_stack **a, t_stack **b);

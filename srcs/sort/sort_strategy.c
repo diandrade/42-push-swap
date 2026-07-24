@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
 void	sort_strategy(int disorder, t_stack **stack_a, t_stack **stack_b,
-		t_flags *opt)
+		t_strategy *opt)
 {
 	if (ft_strncmp(opt->sort_mode, "adaptative", 11) == 0)
 		sort_adaptative(disorder, stack_a, stack_b);

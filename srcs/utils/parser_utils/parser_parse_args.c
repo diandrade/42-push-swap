@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-char	**parser_parse_args(int argc, char **argv, t_stack *stack_a, t_flags *opt)
+char	**parser_parse_args(int argc, char **argv, t_stack *stack_a, t_strategy *opt)
 {
 	static int	i;
 	char		**dst;

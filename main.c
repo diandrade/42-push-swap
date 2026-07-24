@@ -4,7 +4,7 @@ int	main(int argc, char **argv)
 {
 	t_stack *stack_a;
 	t_stack *stack_b;
-	t_flags opt;
+	t_strategy opt;
 	int disorder;
 
 	if (argc < 2)
