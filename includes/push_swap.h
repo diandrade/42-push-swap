@@ -55,6 +55,7 @@ char				**parser_parse_args(int argc, char **argv, t_stack *stack_a,
 						t_strategy *opt);
 int					parser_check_fmt_and_flags(char **dst, t_strategy *opt);
 int					parser_check_dup_and_limits(t_stack *stack_a, char **dst);
+int					parser_is_flag(char *str);
 void				parser_free(char **arr);
 
 /* Stack Utils */

@@ -53,7 +53,7 @@ void	sort_print_bench(t_strategy *opt)
 	if (!opt || !opt->is_bench)
 		return ;
 	ft_putstr_fd("[bench] disorder: ", 2);
-	ft_putdouble_fd(opt->disorder_pct, 2, 2);
+	ft_putdouble_fd(opt->disorder_pct * 100.0, 2, 2);
 	ft_putstr_fd("%\n", 2);
 	print_strategy_name(opt);
 	ft_putstr_fd("[bench] total_ops: ", 2);
