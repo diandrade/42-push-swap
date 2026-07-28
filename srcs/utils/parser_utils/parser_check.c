@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_check.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dieandra <dieandra@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marcde-c <marcde-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 16:00:00 by dieandra          #+#    #+#             */
-/*   Updated: 2026/07/28 16:00:00 by dieandra         ###   ########.fr       */
+/*   Updated: 2026/07/28 15:23:19 by marcde-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,6 @@ int	parser_check_fmt_and_flags(char **dst, t_strategy *opt)
 	return (1);
 }
 
-/*
-** Duplicatas dentro do MESMO argumento (ex.: ./push_swap "1 2 2") nao
-** aparecem na stack ainda, porque a stack so e preenchida depois da
-** validacao. Por isso comparamos tambem com os tokens anteriores de dst.
-*/
 static int	is_dup_in_dst(char **dst, int limit, long value)
 {
 	int	i;

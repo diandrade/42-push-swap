@@ -6,7 +6,7 @@
 /*   By: marcde-c <marcde-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 14:17:45 by marcde-c          #+#    #+#             */
-/*   Updated: 2026/07/28 14:18:07 by marcde-c         ###   ########.fr       */
+/*   Updated: 2026/07/28 15:54:21 by marcde-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,18 @@
 
 static int	get_chunk_size(int size)
 {
+	int	root;
+	int	chunk_size;
+
 	if (size <= 20)
 		return (4);
-	if (size <= 100)
-		return (15);
-	return (32);
+	root = 0;
+	while ((root + 1) <= size / (root + 1))
+		root++;
+	chunk_size = (root * 3) / 2;
+	if (chunk_size < 1)
+		chunk_size = 1;
+	return (chunk_size);
 }
 
 static void	push_chunks(t_stack **a, t_stack **b, int chunk_size,
