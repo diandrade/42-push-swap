@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_long_fd.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dieandra <dieandra@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/28 16:00:00 by dieandra          #+#    #+#             */
+/*   Updated: 2026/07/28 16:00:00 by dieandra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_putnbr_long_fd(long n, int fd)
 {
-	unsigned long nb;
-	char c;
+	unsigned long	nb;
+	char			c;
 
 	if (n < 0)
 	{

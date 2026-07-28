@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_chunk.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marcde-c <marcde-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/28 14:17:45 by marcde-c          #+#    #+#             */
+/*   Updated: 2026/07/28 14:18:07 by marcde-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	get_chunk_size(int size)
@@ -80,8 +92,8 @@ static void	rotate_to_top(t_stack **b, int pos, t_strategy *opt)
 
 void	sort_chunk(t_stack **a, t_stack **b, t_strategy *opt)
 {
-	int size;
-	int chunk_size;
+	int	size;
+	int	chunk_size;
 
 	size = stack_size(*a);
 	if (size <= 3)

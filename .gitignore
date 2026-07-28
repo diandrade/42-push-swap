@@ -1,0 +1,6 @@
+*.o
+push_swap
+checker
+.vscode/
+bench*.txt
+args.txt

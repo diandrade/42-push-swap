@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_print_bench.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dieandra <dieandra@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/28 16:00:00 by dieandra          #+#    #+#             */
+/*   Updated: 2026/07/28 16:00:00 by dieandra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	print_strategy_name(t_strategy *opt)
@@ -6,7 +18,7 @@ static void	print_strategy_name(t_strategy *opt)
 	if (ft_strncmp(opt->sort_mode, "simple", 7) == 0)
 		ft_putstr_fd("Simple / O(n^2)\n", 2);
 	else if (ft_strncmp(opt->sort_mode, "medium", 7) == 0)
-		ft_putstr_fd("Medium / O(n\\sqrt{n})\n", 2);
+		ft_putstr_fd("Medium / O(n*sqrt(n))\n", 2);
 	else if (ft_strncmp(opt->sort_mode, "complex", 7) == 0)
 		ft_putstr_fd("Complex / O(n log n)\n", 2);
 	else if (ft_strncmp(opt->sort_mode, "adaptive", 7) == 0)
@@ -15,7 +27,7 @@ static void	print_strategy_name(t_strategy *opt)
 		if (opt->disorder_pct < 0.20)
 			ft_putstr_fd("O(n^2)\n", 2);
 		else if (opt->disorder_pct < 0.50)
-			ft_putstr_fd("O(n\\sqrt{n})\n", 2);
+			ft_putstr_fd("O(n*sqrt(n))\n", 2);
 		else
 			ft_putstr_fd("O(n log n)\n", 2);
 	}

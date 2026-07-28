@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser_check.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dieandra <dieandra@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/28 16:00:00 by dieandra          #+#    #+#             */
+/*   Updated: 2026/07/28 16:00:00 by dieandra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	parser_is_flag(char *str)
@@ -41,6 +53,25 @@ int	parser_check_fmt_and_flags(char **dst, t_strategy *opt)
 	return (1);
 }
 
+/*
+** Duplicatas dentro do MESMO argumento (ex.: ./push_swap "1 2 2") nao
+** aparecem na stack ainda, porque a stack so e preenchida depois da
+** validacao. Por isso comparamos tambem com os tokens anteriores de dst.
+*/
+static int	is_dup_in_dst(char **dst, int limit, long value)
+{
+	int	i;
+
+	i = 0;
+	while (i < limit)
+	{
+		if (!parser_is_flag(dst[i]) && ft_atol(dst[i]) == value)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int	parser_check_dup_and_limits(t_stack *stack_a, char **dst)
 {
 	int		i;
@@ -55,8 +86,10 @@ int	parser_check_dup_and_limits(t_stack *stack_a, char **dst)
 			continue ;
 		}
 		char_to_int = ft_atol(dst[i]);
-		if (ft_lstfind(stack_a, char_to_int) || char_to_int > INT_MAX
-			|| char_to_int < INT_MIN)
+		if (char_to_int > INT_MAX || char_to_int < INT_MIN)
+			return (0);
+		if (ft_lstfind(stack_a, char_to_int) || is_dup_in_dst(dst, i,
+				char_to_int))
 			return (0);
 		i++;
 	}

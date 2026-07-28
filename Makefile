@@ -14,6 +14,7 @@ SRCS =  main.c \
         srcs/sort/sort_print_bench.c \
         srcs/sort/sort_adaptative.c \
         srcs/sort/sort_strategy.c \
+        srcs/operations/op_log.c \
         srcs/operations/push.c \
         srcs/operations/reverse_rotate.c \
         srcs/operations/rotate.c \
@@ -25,7 +26,6 @@ SRCS =  main.c \
         srcs/utils/stack_utils/stack_assign_index.c \
         srcs/utils/stack_utils/stack_free.c \
         srcs/utils/stack_utils/stack_is_sorted.c \
-        srcs/utils/stack_utils/stack_print.c \
         srcs/utils/stack_utils/stack_size.c \
         srcs/utils/stack_utils/stack_disorder.c \
         srcs/utils/stack_utils/stack_init.c \
@@ -61,7 +61,5 @@ fclean: clean
 
 re: fclean all
 
-test: all
-	./$(NAME)
 
 .PHONY: all clean fclean re

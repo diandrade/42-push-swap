@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_parse_args.c                                :+:      :+:    :+:   */
+/*   op_log.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcde-c <marcde-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 16:00:00 by dieandra          #+#    #+#             */
-/*   Updated: 2026/07/28 14:49:00 by marcde-c         ###   ########.fr       */
+/*   Updated: 2026/07/28 15:00:36 by marcde-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	parser_fatal_error(char **dst, t_stack *stack_a)
+void	op_log(t_strategy *opt, int *counter, char *name)
 {
-	t_stack	*next;
-
-	parser_free(dst);
-	while (stack_a)
-	{
-		next = stack_a->next;
-		free(stack_a);
-		stack_a = next;
-	}
-	write(2, "Error\n", 6);
-	exit(1);
-}
-
-char	**parser_parse_args(char *arg, t_stack *stack_a, t_strategy *opt)
-{
-	char	**dst;
-
-	dst = ft_split(arg, ' ');
-	if (parser_check_fmt_and_flags(dst, opt)
-		&& parser_check_dup_and_limits(stack_a, dst))
-		return (dst);
-	parser_fatal_error(dst, stack_a);
-	return (NULL);
+	(*counter)++;
+	opt->total_ops++;
+	if (opt->count_only)
+		return ;
+	ft_putstr_fd(name, 1);
 }

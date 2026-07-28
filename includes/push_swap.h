@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dieandra <dieandra@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/28 16:00:00 by dieandra          #+#    #+#             */
+/*   Updated: 2026/07/28 16:00:00 by dieandra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 /* Libraries */
 # include <limits.h>
 # include <stddef.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -19,6 +30,7 @@ typedef struct s_stack
 typedef struct s_strategy
 {
 	int				is_bench;
+	int				count_only;
 	char			*sort_mode;
 	double			disorder_pct;
 	int				sa;
@@ -51,7 +63,7 @@ void				ft_putnbr_long_fd(long n, int fd);
 void				ft_putdouble_fd(double n, int precision, int fd);
 
 /* Parser Utils */
-char				**parser_parse_args(int argc, char **argv, t_stack *stack_a,
+char				**parser_parse_args(char *arg, t_stack *stack_a,
 						t_strategy *opt);
 int					parser_check_fmt_and_flags(char **dst, t_strategy *opt);
 int					parser_check_dup_and_limits(t_stack *stack_a, char **dst);
@@ -60,7 +72,6 @@ void				parser_free(char **arr);
 
 /* Stack Utils */
 int					stack_is_sorted(t_stack *stack);
-void				stack_print(t_stack *head);
 void				stack_append(t_stack **stack_a, long content);
 int					stack_size(t_stack *stack);
 void				stack_assign_index(t_stack *stack_a);
@@ -81,6 +92,7 @@ void				sort_strategy(double disorder, t_stack **stack_a,
 						t_stack **stack_b, t_strategy *opt);
 
 /* Operations */
+void				op_log(t_strategy *opt, int *counter, char *name);
 void				pa(t_stack **a, t_stack **b, t_strategy *opt);
 void				pb(t_stack **a, t_stack **b, t_strategy *opt);
 void				sa(t_stack **a, int print, t_strategy *opt);
