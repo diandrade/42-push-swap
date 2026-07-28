@@ -11,6 +11,7 @@ SRCS =  main.c \
         srcs/sort/sort_small.c \
         srcs/sort/sort_chunk.c \
         srcs/sort/sort_radix.c \
+        srcs/sort/sort_print_bench.c \
         srcs/sort/sort_adaptative.c \
         srcs/sort/sort_strategy.c \
         srcs/operations/push.c \
@@ -35,8 +36,9 @@ SRCS =  main.c \
         srcs/utils/libft_utils/ft_lstfind.c \
         srcs/utils/libft_utils/ft_lstlast.c \
         srcs/utils/libft_utils/ft_lstnew.c \
-        srcs/utils/libft_utils/ft_putnbr_long.c \
-        srcs/utils/libft_utils/ft_putstr.c \
+        srcs/utils/libft_utils/ft_putnbr_long_fd.c \
+        srcs/utils/libft_utils/ft_putdouble_fd.c \
+        srcs/utils/libft_utils/ft_putstr_fd.c \
         srcs/utils/libft_utils/ft_split.c \
         srcs/utils/libft_utils/ft_strncmp.c \
         srcs/utils/libft_utils/ft_strlen.c

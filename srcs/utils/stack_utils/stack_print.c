@@ -7,11 +7,11 @@ void	stack_print(t_stack *head)
 	current = head;
 	while (current != NULL)
 	{
-		ft_putstr("[");
-		ft_putnbr_long(current->content);
-		ft_putstr("]");
+		ft_putstr_fd("[", 1);
+		ft_putnbr_long_fd(current->content, 1);
+		ft_putstr_fd("]", 1);
 		if (current->next != NULL)
-			ft_putstr(" -> ");
+			ft_putstr_fd(" -> ", 1);
 		current = current->next;
 	}
 	write(1, "\n", 1);

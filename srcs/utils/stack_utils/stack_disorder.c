@@ -1,14 +1,14 @@
 #include "push_swap.h"
 
-int	stack_disorder(t_stack *stack_a)
+double	stack_disorder(t_stack *stack_a)
 {
-	t_stack *i;
-	t_stack *j;
-	int mistakes;
-	int total_pairs;
+	t_stack	*i;
+	t_stack	*j;
+	double	mistakes;
+	double	total_pairs;
 
 	if (!stack_a || !stack_a->next)
-		return (0);
+		return (0.0);
 	mistakes = 0;
 	total_pairs = 0;
 	i = stack_a;
@@ -24,6 +24,5 @@ int	stack_disorder(t_stack *stack_a)
 		}
 		i = i->next;
 	}
-
-	return ((mistakes * 100) / total_pairs);
+	return (mistakes / total_pairs);
 }

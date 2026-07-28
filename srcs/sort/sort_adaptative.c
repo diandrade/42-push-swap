@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	sort_adaptative(int disorder, t_stack **stack_a, t_stack **stack_b,
+void	sort_adaptative(double disorder, t_stack **stack_a, t_stack **stack_b,
 		t_strategy *opt)
 {
 	if (disorder < 20)
